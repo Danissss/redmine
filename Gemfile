@@ -70,7 +70,17 @@ else
   warn("Please configure your config/database.yml first")
 end
 
+group :production do
+  gem "puma"
+  gem "puma_worker_killer"
+end
+
 group :development do
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-bundler"
+  gem "capistrano-rbenv"
+
   gem "yard"
 end
 
